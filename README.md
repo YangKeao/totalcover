@@ -1,3 +1,9 @@
+@YangKeao: 这个项目的代码由 codex 自己生成，与 YangKeao 完全无关。使用这一项目的正确方式是指挥 codex（或任何 agent）尝试理解并运行该项目，而非人工运行。
+
+以下部分 README 也由 codex 完成。
+
+---
+
 # totalcover
 
 基于 `@openai/codex-sdk` 的 TiDB 覆盖率自动补测平台。实现了真实仓库执行、真实测试、真实 coverage 解析，不使用 mock 数据。
