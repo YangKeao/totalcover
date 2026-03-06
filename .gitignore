@@ -1,0 +1,10 @@
+node_modules
+dist
+.pnpm-store
+.gopath
+.gocache
+.gomodcache
+.gotmp
+artifacts
+workspace
+.totalcover

@@ -1,0 +1,46 @@
+{
+  "repo": {
+    "url": "/home/yangkeao/Project/github.com/YangKeao/tidb/master",
+    "branch": "master",
+    "localPath": "./workspace/tidb",
+    "refresh": false,
+    "cloneDepth": 1
+  },
+  "coverage": {
+    "autoDetectTidbCommands": true,
+    "runUnit": true,
+    "runE2E": false,
+    "scopePackage": "pkg/util/checksum",
+    "scopeRunner": "ut",
+    "utMaxProcs": 4,
+    "commandTimeoutMs": 1800000,
+    "env": {
+      "GOTOOLCHAIN": "local",
+      "GOPATH": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gopath",
+      "GOMODCACHE": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gomodcache",
+      "GOCACHE": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gocache"
+    },
+    "profileGlobs": [
+      ".totalcover/*.out",
+      "coverage.dat"
+    ]
+  },
+  "scoring": {
+    "model": "gpt-5.2-codex",
+    "concurrency": 1,
+    "minScore": 70,
+    "chunkSize": 12
+  },
+  "generation": {
+    "concurrency": 1,
+    "maxRetries": 3
+  },
+  "verification": {
+    "goTestTimeoutMs": 1200000,
+    "requireCoverageHit": true
+  },
+  "output": {
+    "scoredTasksFile": "./artifacts/scored-tasks.checksum.json",
+    "runReportFile": "./artifacts/run-report.checksum.json"
+  }
+}

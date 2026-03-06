@@ -1,0 +1,50 @@
+{
+  "repo": {
+    "url": "/home/yangkeao/Project/github.com/YangKeao/tidb/master",
+    "branch": "master",
+    "localPath": "./workspace/tidb",
+    "refresh": false,
+    "cloneDepth": 1
+  },
+  "coverage": {
+    "autoDetectTidbCommands": true,
+    "runUnit": true,
+    "runE2E": true,
+    "utMaxProcs": 8,
+    "allowCommandFailure": false,
+    "env": {
+      "GOTOOLCHAIN": "local",
+      "GOPATH": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gopath",
+      "GOMODCACHE": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gomodcache",
+      "GOCACHE": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gocache",
+      "GOTMPDIR": "/home/yangkeao/Project/github.com/YangKeao/totalcover/.gotmp",
+      "TMPDIR": "/tmp/tidb",
+      "GOFLAGS": "-count=1"
+    },
+    "profileGlobs": [
+      "test_coverage/*.out",
+      ".totalcover/tidb_cov.integration_test.out",
+      "coverage.dat"
+    ]
+  },
+  "scoring": {
+    "model": "gpt-5.2-codex",
+    "concurrency": 16,
+    "minScore": 70,
+    "chunkSize": 16
+  },
+  "generation": {
+    "concurrency": 8,
+    "maxRetries": 5,
+    "retryFailed": true
+  },
+  "verification": {
+    "goTestTimeoutMs": 0,
+    "requireCoverageHit": true
+  },
+  "output": {
+    "scoredTasksFile": "./artifacts/scored-tasks.full.json",
+    "runReportFile": "./artifacts/run-report.full.json",
+    "checkpointFile": "./artifacts/checkpoint.full.json"
+  }
+}

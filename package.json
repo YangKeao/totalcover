@@ -1,0 +1,24 @@
+{
+  "name": "totalcover",
+  "version": "1.0.0",
+  "description": "AI-driven test coverage boost platform for pingcap/tidb",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/index.ts",
+    "boost": "tsx src/index.ts --config platform.config.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@openai/codex-sdk": "latest",
+    "glob": "^11.0.3",
+    "p-limit": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@9.5.0"
+}

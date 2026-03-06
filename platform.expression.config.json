@@ -1,0 +1,38 @@
+{
+  "repo": {
+    "url": "/home/yangkeao/Project/github.com/YangKeao/tidb/master",
+    "branch": "master",
+    "localPath": "./workspace/tidb",
+    "refresh": false,
+    "cloneDepth": 1
+  },
+  "coverage": {
+    "autoDetectTidbCommands": true,
+    "runUnit": true,
+    "runE2E": false,
+    "scopePackage": "pkg/expression",
+    "utMaxProcs": 4,
+    "profileGlobs": [
+      ".totalcover/*.out",
+      "coverage.dat"
+    ]
+  },
+  "scoring": {
+    "model": "gpt-5.2-codex",
+    "concurrency": 1,
+    "minScore": 101,
+    "chunkSize": 12
+  },
+  "generation": {
+    "concurrency": 1,
+    "maxRetries": 3
+  },
+  "verification": {
+    "goTestTimeoutMs": 1200000,
+    "requireCoverageHit": true
+  },
+  "output": {
+    "scoredTasksFile": "./artifacts/scored-tasks.expression.json",
+    "runReportFile": "./artifacts/run-report.expression.json"
+  }
+}

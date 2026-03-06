@@ -1,0 +1,37 @@
+{
+  "repo": {
+    "url": "https://github.com/pingcap/tidb.git",
+    "branch": "master",
+    "localPath": "./workspace/tidb",
+    "refresh": false,
+    "cloneDepth": 1
+  },
+  "coverage": {
+    "autoDetectTidbCommands": true,
+    "runUnit": true,
+    "runE2E": true,
+    "utMaxProcs": 8,
+    "profileGlobs": [
+      ".totalcover/*.out",
+      "coverage.dat"
+    ]
+  },
+  "scoring": {
+    "model": "gpt-5.2-codex",
+    "concurrency": 4,
+    "minScore": 70,
+    "chunkSize": 16
+  },
+  "generation": {
+    "concurrency": 2,
+    "maxRetries": 3
+  },
+  "verification": {
+    "goTestTimeoutMs": 600000,
+    "requireCoverageHit": true
+  },
+  "output": {
+    "scoredTasksFile": "./artifacts/scored-tasks.json",
+    "runReportFile": "./artifacts/run-report.json"
+  }
+}
